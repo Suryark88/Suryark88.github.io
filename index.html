@@ -100,6 +100,11 @@ nav{justify-content:center}
   #surya-ai-widget{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:Inter,system-ui,Arial,sans-serif;text-align:left}
   #surya-ai-toggle{display:flex;align-items:center;gap:10px;background:#7168d9;color:white;border:1px solid #aaa3ff;padding:6px 16px 6px 6px;border-radius:32px;cursor:pointer;font-weight:700;box-shadow:0 8px 24px #0007}
   #surya-ai-toggle img{width:38px;height:38px;object-fit:cover;object-position:center 35%;border-radius:50%;border:2px solid #d5caff}
+  /* Gentle attention bounce, similar to the escalation assistant. */
+  #surya-ai-toggle{animation:surya-assistant-bounce 2.8s ease-in-out infinite;transform-origin:bottom right}
+  @keyframes surya-assistant-bounce{0%,65%,100%{transform:translateY(0)}72%{transform:translateY(-13px)}80%{transform:translateY(0)}87%{transform:translateY(-6px)}94%{transform:translateY(0)}}
+  #surya-ai-widget.is-open #surya-ai-toggle{animation:none}
+  @media(prefers-reduced-motion:reduce){#surya-ai-toggle{animation:none!important}}
   #surya-ai-toggle:hover{background:#6259cc}
   #surya-ai-toggle:focus-visible{outline:2px solid white;outline-offset:3px}
   #surya-ai-frame{position:absolute;bottom:65px;right:0;width:min(400px,calc(100vw - 32px));height:min(580px,calc(100dvh - 110px));border:1px solid #30363d;border-radius:12px;background:#0d1117;box-shadow:0 12px 35px #0009}
@@ -112,10 +117,11 @@ nav{justify-content:center}
     const frame=document.getElementById('surya-ai-frame');
     button.addEventListener('click',function(){
       frame.hidden=!frame.hidden;
+      document.getElementById('surya-ai-widget').classList.toggle('is-open',!frame.hidden);
       button.setAttribute('aria-expanded',String(!frame.hidden));
       button.setAttribute('aria-label',frame.hidden?"Open Surya's AI Assistance":"Close Surya's AI Assistance");
     });
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!frame.hidden){frame.hidden=true;button.setAttribute('aria-expanded','false');button.focus();}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!frame.hidden){frame.hidden=true;document.getElementById('surya-ai-widget').classList.remove('is-open');button.setAttribute('aria-expanded','false');button.focus();}});
   })();
 </script>
 
