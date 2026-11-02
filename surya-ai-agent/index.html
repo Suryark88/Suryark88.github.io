@@ -1,3 +1,86 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Surya Ram Kumar | Portfolio Assistant</title><link rel="stylesheet" href="assistant.css"><style>body{margin:0;min-height:100vh;background:linear-gradient(135deg,#120e22,#32204c);color:#f8f5ff;font:16px/1.6 system-ui,sans-serif}.wrap{max-width:850px;margin:0 auto;padding:12vh 24px}h1{font-size:clamp(36px,6vw,64px);margin-bottom:12px}.sub{color:#c9bfdf}a{color:#c4a9ff}</style></head><body><main class="wrap"><p class="sub">SERVICE DELIVERY · CUSTOMER SUCCESS · AUTOMATION</p><h1>Surya Ram Kumar</h1><p>Building smarter service delivery workflows through practical automation and technology.</p><p class="sub">Ask my portfolio assistant about my experience, skills and projects.</p><p><a href="https://github.com/suryark88">GitHub</a> · <a href="https://www.linkedin.com/in/suryanagarajan/">LinkedIn</a> · <a href="mailto:suryark@live.com">Email</a></p></main><div id="surya-assistant-root"></div><script src="assistant.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Surya's AI Assistance | Portfolio & GitHub</title>
+<meta name="description" content="Learn about Surya's experience, skills and automation projects.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Minimal fallback styling; existing style.css remains the primary design. */
+html,body{min-height:100%;}body{margin:0;background:#0e1117;color:#f1f3f7;font-family:Arial,system-ui,sans-serif}
+.chat-container{display:flex;flex-direction:column;min-height:100dvh;max-width:1250px;margin:auto;background:#171c23;border:1px solid #303844;border-radius:22px;overflow:hidden}
+.chat-header{display:flex;align-items:center;gap:20px;padding:28px 35px;border-bottom:1px solid #303844}.avatar{display:grid;place-items:center;background:#8a4de7;color:#fff;width:80px;height:80px;border-radius:50%;font-size:36px;font-weight:bold}.header-info h1{margin:0 0 9px;font-size:30px}.header-info p{margin:0;color:#9ca8bb}
+.chat-messages{flex:1;min-height:260px;max-height:60vh;overflow-y:auto;padding:32px 38px;display:flex;flex-direction:column;gap:24px}.message{padding:22px 26px;border-radius:20px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;max-width:82%}.message.bot{background:#232830;border:1px solid #353b46;align-self:flex-start}.message.user{background:#8a4de7;align-self:flex-end;color:white}.chat-input{display:flex;gap:16px;padding:24px 30px;border-top:1px solid #303844}.chat-input input{flex:1;min-width:0;background:#0d1117;border:1px solid #3b4555;border-radius:14px;color:#fff;padding:18px;font:inherit}.chat-input button{border:0;border-radius:14px;background:#8a4de7;color:white;padding:15px 30px;font-weight:bold;cursor:pointer}.chat-input button:disabled{opacity:.55}.chat-footer{border-top:1px solid #303844;padding:23px;text-align:center;color:#aab5c4}.chat-footer a{color:#aab5c4;text-decoration:none;margin:0 12px}.chat-footer a:hover{text-decoration:underline}.message a{color:#c5a7ff}button:focus-visible,input:focus-visible{outline:2px solid #c5a7ff;outline-offset:3px}
+@media(max-width:600px){.chat-container{border-radius:0}.chat-header{padding:18px;gap:12px}.avatar{width:56px;height:56px;font-size:25px}.header-info h1{font-size:20px}.chat-messages{padding:18px;max-height:65vh}.message{max-width:94%;padding:15px}.chat-input{padding:12px;gap:8px}.chat-input button{padding:12px 17px}}
+</style>
+</head>
+<body>
+<main class="chat-container">
+<header class="chat-header"><div class="avatar">S</div><div class="header-info"><h1>Surya's AI Assistance</h1><p>Professional Portfolio &amp; GitHub Assistant</p></div></header>
+<section class="chat-messages" id="chatMessages" aria-label="Conversation" aria-live="polite" aria-relevant="additions text">
+<div class="message bot">Hi! I'm Surya's AI Assistance. I'm here to help you learn more about Surya's professional experience, technical expertise, AI Integration, automation projects, and GitHub repositories. How can I help you today?</div>
+</section>
+<form class="chat-input" id="chatForm"><input type="text" id="userInput" placeholder="Ask me anything about Surya..." aria-label="Your message" autocomplete="off" maxlength="1000" required><button type="submit" id="sendButton">Send</button></form>
+<footer class="chat-footer"><a href="https://suryark88.github.io/" target="_blank" rel="noopener noreferrer">Portfolio</a> | <a href="https://github.com/suryark88" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://github.com/suryark88/surya-ai-agent" target="_blank" rel="noopener noreferrer">AI Agent Project</a></footer>
+</main>
+<script>
+'use strict';
+// Browser-only assistant: no external AI API, no Cloudflare and no credentials.
+const knowledge=[
+{terms:['salesforce sharepoint outlook dataverse','sfdc sharepoint outlook dataverse','audit integrations','integrated systems'],answer:'Surya’s Audit Tracker – Service Delivery (Power Apps) project brings together Salesforce (SFDC), SharePoint, Outlook and Microsoft Dataverse in a service-delivery workflow. The solution is designed to consolidate account context, audit records, communications and structured operational information for reviewing multiple Kaseya products. This is a high-level portfolio description, not a live connection to company systems.'},
 
+{terms:['who is surya','about surya','introduce surya','tell me about surya','background','profile','summary'],answer:'Surya Ram Kumar is a SaaS service delivery manager and AI automation practitioner with 13+ years of experience across IT operations, customer success, ITSM and enterprise workflows. He combines service governance, operational leadership and hands-on automation using Microsoft Power Platform and AI-assisted workflow design.'},
+{terms:['experience','work history','career','previous companies','employers','where has surya worked'],answer:'Surya currently works at Kaseya as a SaaS Delivery Manager (since June 2024). His prior experience includes ValuePoint Systems, RLabs, Teamware, DXC Technology, Convergys, Sutherland and Infosys, plus overlapping freelance work at Wintellisys. His portfolio describes 13+ years of IT experience.'},
+{terms:['kaseya','current role','current job','service delivery','customer success','noc'],answer:'At Kaseya, Surya leads service delivery and customer relationships across 40+ accounts, including service reviews, escalation management, retention risks and SLA/KPI performance. He coordinates NOC patch governance and develops reporting and AI-assisted workflows with Datto RMM, Autotask PSA, SharePoint and Microsoft Power Platform.'},
+{terms:['skill','expertise','technology','tools','tech stack','platform'],answer:'Surya’s skills include SaaS service delivery, ITSM/ITIL, customer success, SLA/KPI management, escalation management, Power Automate, Power Apps, Office Scripts, SharePoint, Copilot Studio, ServiceNow, Datto RMM, Autotask PSA, Power BI, Snowflake, Azure, IAM, and AI agent workflow design.'},
+{terms:['automation','automate','workflow','power automate','office scripts'],answer:'Surya develops automation workflows using Power Automate, Office Scripts, SharePoint and Microsoft Power Platform. His portfolio features operational patch reporting, account intelligence, escalation workflows and meeting follow-up automation.'},
+{terms:['project','portfolio work','what has he built','what has surya built'],answer:'Featured projects include Audit Tracker – Service Delivery (Power Apps), SDM Intelligence Agent (SDIS), Catalyst (Go-based escalation management and AI-assisted triage), Operational Intelligence & Patch Reporting (Datto RMM, Power Automate and Office Scripts), and Cadence (meeting follow-up and SharePoint audit workflow).'},
+{terms:['power apps audit','power app audit','audit tracker','audit project','monthly audit','service delivery audit','customer audit','sharepoint audit','audit application'],answer:'Audit Tracker – Service Delivery is a Power Apps solution developed to streamline monthly service-delivery audits and customer account reviews. It brings together Salesforce (SFDC), SharePoint, Outlook and Dataverse information in a unified service-delivery audit experience (integrations may vary by environment), showing multiple Kaseya product views, ARR/MRR, account health, product usage, financial and collection risk, escalation context, and executive summaries. It supports accounts using multiple Kaseya products, includes a recent account-audit history panel, and validates required fields before submitting audit updates to SharePoint. The project aims to reduce manual lookups and make customer risk and service-delivery information easier to review consistently.'},
+{terms:['sdis','intelligence agent','account intelligence','rca'],answer:'SDM Intelligence Agent (SDIS) is an account-aware service intelligence initiative designed to bring together audit status, escalation history, account risks and recommended next steps. Its planned workflows include account snapshots, escalation checks, audit submissions and RCA/report preparation with human review.'},
+{terms:['patch','patching','post patch','patch report','datto rmm'],answer:'Surya created Power Automate and Office Scripts workflows to transform Datto RMM CSV exports into structured Excel reports and partner-facing post-patch communications, with server/workstation segmentation, patch status categorization and retained raw data.'},
+{terms:['catalyst','escalation project','go project','triage'],answer:'Catalyst is a Go-based escalation management project with account search, escalation submission, prioritization, ownership mapping and AI-assisted summary and business-impact workflow designs.'},
+{terms:['cadence','meeting','zoom','follow up'],answer:'Cadence is a communication and audit workflow connecting Zoom meeting notifications, AI-generated meeting summaries and SharePoint audit tracking for consistent customer follow-up.'},
+{terms:['education','degree','university','qualification'],answer:'Surya holds a Master of Computer Applications (MCA) from Visvesvaraya Technological University (2013) and a Bachelor of Computer Applications (BCA) from Bangalore University (2010).'},
+{terms:['certificate','certification','training','professional development'],answer:'His portfolio lists Advanced MCP and MCP Introduction from Anthropic, AI project-management courses from Vanderbilt and Johns Hopkins, Datto RMM Certified Administrator, Google Project Management and Agile Project Management certificates, and Azure-related training.'},
+{terms:['leadership','team management','team size','people management'],answer:'Surya’s portfolio describes leadership of frontline operational teams of approximately 150 people, as well as service quality, escalations, customer relationships and stakeholder coordination.'},
+{terms:['servicenow','itsm','cmdb'],answer:'Surya has worked with ServiceNow incident and service request workflows, CMDB practices, ticket flow and SLA adherence. His experience includes ITSM delivery and process management rather than a claim of specialist ServiceNow application development.'},
+{terms:['ai','agentic','llm','copilot','artificial intelligence'],answer:'Surya works on AI-assisted service intelligence, agent workflows, knowledge retrieval, structured outputs and automation. His portfolio lists Copilot Studio, prompt engineering, local LLMs and Model Context Protocol among his areas of interest and practice.'},
+{terms:['contact','email','reach','hire','availability','linkedin','github','hugging face','resume'],answer:'You can contact Surya at suryark@live.com. LinkedIn: https://www.linkedin.com/in/suryanagarajan/ . GitHub: https://github.com/suryark88 . Hugging Face: https://huggingface.co/suryakumar-ai . Portfolio: https://suryark88.github.io/ . His current availability is not specified in the portfolio.'},
+{terms:['location','based','city','where does surya live'],answer:'Surya’s professional portfolio lists Bengaluru, India as his location.'}
+
+];
+const chatMessages=document.getElementById('chatMessages');
+const chatForm=document.getElementById('chatForm');
+const userInput=document.getElementById('userInput');
+function normalize(t){return String(t).toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function getAnswer(question){
+ const text=normalize(question);
+ if(!text)return 'Please enter a question.';
+ if(/^(hi|hello|hey|good morning|good evening|thanks|thank you)$/.test(text))return 'Hello! You can ask about Surya’s career, technical skills, projects, education and professional contact information.';
+ const words=text.split(' ');let best=null,highest=0;
+ for(const item of knowledge){let score=0;
+  for(const phrase of item.terms){const term=normalize(phrase);if(!term)continue;
+   if(text===term)score=Math.max(score,100+term.length);
+   else if(text.includes(term))score=Math.max(score,20+term.split(' ').length*6);
+   else {const keys=term.split(' ').filter(w=>w.length>3);if(keys.length){const hits=keys.filter(w=>words.includes(w)).length;score=Math.max(score,(hits/keys.length)*6)}}
+  }
+  if(score>highest){highest=score;best=item}
+ }
+ return highest>=3&&best?best.answer:'I don’t have verified information about that in Surya’s public portfolio. You can ask about his professional experience, skills, projects, education or contact details.';
+}
+function addMessage(content,kind){
+ const div=document.createElement('div');div.className='message '+kind;
+ // Only trusted, fixed URLs in knowledge responses become clickable links.
+ const urlRegex=/https:\/\/[^\s]+/g;let previous=0;const value=String(content);
+ for(const match of value.matchAll(urlRegex)){
+  const start=match.index;div.appendChild(document.createTextNode(value.slice(previous,start)));
+  const url=match[0].replace(/[.,]+$/,'');const link=document.createElement('a');link.href=url;link.textContent=url;link.target='_blank';link.rel='noopener noreferrer';div.appendChild(link);
+  const removed=match[0].slice(url.length);if(removed)div.appendChild(document.createTextNode(removed));previous=start+match[0].length;
+ }
+ div.appendChild(document.createTextNode(value.slice(previous)));chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight;
+}
+chatForm.addEventListener('submit',function(event){event.preventDefault();const question=userInput.value.trim();if(!question)return;addMessage(question,'user');userInput.value='';try{addMessage(getAnswer(question),'bot')}catch(error){console.error('Assistant response error:',error);addMessage('I could not process that question. Please try asking about Surya’s experience or projects.','bot')}userInput.focus()});
+</script>
+</body>
+</html>
