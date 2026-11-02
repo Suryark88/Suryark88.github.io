@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- Surya AI GitHub-only deployment verification 20261102 -->
-<!-- ASSISTANT_BUILD: github-only-20261102-verified -->
+<!-- Surya AI recruiter conversation build 20261102 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,62 +27,93 @@ html,body{min-height:100%;}body{margin:0;background:#0e1117;color:#f1f3f7;font-f
 </main>
 <script>
 'use strict';
-console.info('Surya AI assistant build: github-only-20261102-verified; no external AI API');
-// Browser-only assistant: no external AI API, no Cloudflare and no credentials.
-const knowledge=[
-{terms:['salesforce sharepoint outlook dataverse','sfdc sharepoint outlook dataverse','audit integrations','integrated systems'],answer:'Surya’s Audit Tracker – Service Delivery (Power Apps) project brings together Salesforce (SFDC), SharePoint, Outlook and Microsoft Dataverse in a service-delivery workflow. The solution is designed to consolidate account context, audit records, communications and structured operational information for reviewing multiple Kaseya products. This is a high-level portfolio description, not a live connection to company systems.'},
-
-{terms:['who is surya','about surya','introduce surya','tell me about surya','background','profile','summary'],answer:'Surya Ram Kumar is a SaaS service delivery manager and AI automation practitioner with 13+ years of experience across IT operations, customer success, ITSM and enterprise workflows. He combines service governance, operational leadership and hands-on automation using Microsoft Power Platform and AI-assisted workflow design.'},
-{terms:['experience','work history','career','previous companies','employers','where has surya worked'],answer:'Surya currently works at Kaseya as a SaaS Delivery Manager (since June 2024). His prior experience includes ValuePoint Systems, RLabs, Teamware, DXC Technology, Convergys, Sutherland and Infosys, plus overlapping freelance work at Wintellisys. His portfolio describes 13+ years of IT experience.'},
-{terms:['kaseya','current role','current job','service delivery','customer success','noc'],answer:'At Kaseya, Surya leads service delivery and customer relationships across 40+ accounts, including service reviews, escalation management, retention risks and SLA/KPI performance. He coordinates NOC patch governance and develops reporting and AI-assisted workflows with Datto RMM, Autotask PSA, SharePoint and Microsoft Power Platform.'},
-{terms:['skill','expertise','technology','tools','tech stack','platform'],answer:'Surya’s skills include SaaS service delivery, ITSM/ITIL, customer success, SLA/KPI management, escalation management, Power Automate, Power Apps, Office Scripts, SharePoint, Copilot Studio, ServiceNow, Datto RMM, Autotask PSA, Power BI, Snowflake, Azure, IAM, and AI agent workflow design.'},
-{terms:['automation','automate','workflow','power automate','office scripts'],answer:'Surya develops automation workflows using Power Automate, Office Scripts, SharePoint and Microsoft Power Platform. His portfolio features operational patch reporting, account intelligence, escalation workflows and meeting follow-up automation.'},
-{terms:['project','portfolio work','what has he built','what has surya built'],answer:'Featured projects include Audit Tracker – Service Delivery (Power Apps), SDM Intelligence Agent (SDIS), Catalyst (Go-based escalation management and AI-assisted triage), Operational Intelligence & Patch Reporting (Datto RMM, Power Automate and Office Scripts), and Cadence (meeting follow-up and SharePoint audit workflow).'},
-{terms:['power apps audit','power app audit','audit tracker','audit project','monthly audit','service delivery audit','customer audit','sharepoint audit','audit application'],answer:'Audit Tracker – Service Delivery is a Power Apps solution developed to streamline monthly service-delivery audits and customer account reviews. It brings together Salesforce (SFDC), SharePoint, Outlook and Dataverse information in a unified service-delivery audit experience (integrations may vary by environment), showing multiple Kaseya product views, ARR/MRR, account health, product usage, financial and collection risk, escalation context, and executive summaries. It supports accounts using multiple Kaseya products, includes a recent account-audit history panel, and validates required fields before submitting audit updates to SharePoint. The project aims to reduce manual lookups and make customer risk and service-delivery information easier to review consistently.'},
-{terms:['sdis','intelligence agent','account intelligence','rca'],answer:'SDM Intelligence Agent (SDIS) is an account-aware service intelligence initiative designed to bring together audit status, escalation history, account risks and recommended next steps. Its planned workflows include account snapshots, escalation checks, audit submissions and RCA/report preparation with human review.'},
-{terms:['patch','patching','post patch','patch report','datto rmm'],answer:'Surya created Power Automate and Office Scripts workflows to transform Datto RMM CSV exports into structured Excel reports and partner-facing post-patch communications, with server/workstation segmentation, patch status categorization and retained raw data.'},
-{terms:['catalyst','escalation project','go project','triage'],answer:'Catalyst is a Go-based escalation management project with account search, escalation submission, prioritization, ownership mapping and AI-assisted summary and business-impact workflow designs.'},
-{terms:['cadence','meeting','zoom','follow up'],answer:'Cadence is a communication and audit workflow connecting Zoom meeting notifications, AI-generated meeting summaries and SharePoint audit tracking for consistent customer follow-up.'},
-{terms:['education','degree','university','qualification'],answer:'Surya holds a Master of Computer Applications (MCA) from Visvesvaraya Technological University (2013) and a Bachelor of Computer Applications (BCA) from Bangalore University (2010).'},
-{terms:['certificate','certification','training','professional development'],answer:'His portfolio lists Advanced MCP and MCP Introduction from Anthropic, AI project-management courses from Vanderbilt and Johns Hopkins, Datto RMM Certified Administrator, Google Project Management and Agile Project Management certificates, and Azure-related training.'},
-{terms:['leadership','team management','team size','people management'],answer:'Surya’s portfolio describes leadership of frontline operational teams of approximately 150 people, as well as service quality, escalations, customer relationships and stakeholder coordination.'},
-{terms:['servicenow','itsm','cmdb'],answer:'Surya has worked with ServiceNow incident and service request workflows, CMDB practices, ticket flow and SLA adherence. His experience includes ITSM delivery and process management rather than a claim of specialist ServiceNow application development.'},
-{terms:['ai','agentic','llm','copilot','artificial intelligence'],answer:'Surya works on AI-assisted service intelligence, agent workflows, knowledge retrieval, structured outputs and automation. His portfolio lists Copilot Studio, prompt engineering, local LLMs and Model Context Protocol among his areas of interest and practice.'},
-{terms:['contact','email','reach','hire','availability','linkedin','github','hugging face','resume'],answer:'You can contact Surya at suryark@live.com. LinkedIn: https://www.linkedin.com/in/suryanagarajan/ . GitHub: https://github.com/suryark88 . Hugging Face: https://huggingface.co/suryakumar-ai . Portfolio: https://suryark88.github.io/ . His current availability is not specified in the portfolio.'},
-{terms:['location','based','city','where does surya live'],answer:'Surya’s professional portfolio lists Bengaluru, India as his location.'}
-
+// Recruiter-focused, offline knowledge assistant. No Cloudflare, Groq, external APIs, or keys.
+const ASSISTANT_BUILD = 'recruiter-conversation-20261102-v1';
+const state = { role: '', awaitingRole: false, lastTopic: '', lastProject: '' };
+const answers = {
+ intro: 'Surya Ram Kumar is a service delivery and customer success professional with 13+ years of experience in IT operations, ITSM, enterprise workflows and automation. His work combines customer leadership with hands-on Microsoft Power Platform and AI-assisted workflow projects. Would you like to explore his technical skills, projects, or leadership experience?',
+ experience: 'Surya’s public portfolio describes 13+ years of experience. He currently works at Kaseya, which he joined in June 2024. His earlier experience includes ValuePoint Systems, RLabs, Teamware, DXC Technology, Convergys, Sutherland and Infosys, plus overlapping freelance work at Wintellisys.',
+ kaseya: 'Surya joined Kaseya in June 2024. His work focuses on service delivery, customer relationships, SLA/KPI reviews, escalations and operational improvements, including automation and reporting.',
+ skills: 'Surya’s demonstrated areas include Power Apps, Power Automate, SharePoint, Dataverse, Office Scripts, Copilot Studio, Salesforce integrations, ITSM/ServiceNow workflows, Datto RMM, Autotask PSA and reporting automation. His strength is connecting business needs with practical workflow solutions. Which area would you like to explore?',
+ projects: 'Some projects featured in Surya’s portfolio are Audit Tracker – Service Delivery (Power Apps), SDM Intelligence Agent (SDIS), operational patch-report automation, Catalyst (escalation management) and Cadence (meeting follow-up automation). Which project would you like to discuss?',
+ audit: 'Audit Tracker – Service Delivery is a Power Apps project for monthly service-delivery reviews. It brings together Salesforce account information, SharePoint audit records, Outlook-related workflows and Dataverse information, with views across multiple Kaseya products. Features include account health, ARR/MRR, product usage, financial risk, escalation context, audit history and required-field validation. Integration scope can vary by environment; this is a portfolio overview, not live access to company systems.',
+ sdis: 'SDIS is an account-aware service intelligence initiative involving customer snapshots, escalation history, audit context and AI-assisted workflows. Some capabilities are planned, so they should not be represented as fully deployed.',
+ patch: 'Surya has worked on Power Automate and Office Scripts workflows that turn Datto RMM CSV exports into structured patch reports, separating servers and workstations, patch status and supporting raw data.',
+ catalyst: 'Catalyst is a Go-based escalation management project covering account search, triage, prioritization, ownership and AI-assisted summary concepts.',
+ cadence: 'Cadence is a meeting follow-up and audit workflow concept involving Zoom notifications, meeting summaries and SharePoint tracking.',
+ servicenow: 'Surya has experience using ServiceNow for incident and service request processes, CMDB-related practices, ticket flow and SLA governance. His background is primarily ITSM delivery and workflow management, not verified specialist ServiceNow development.',
+ leadership: 'Surya’s portfolio describes leadership of frontline operational teams of approximately 150 people, along with customer relationship management, service governance, escalations and cross-team coordination.',
+ education: 'Surya holds an MCA from Visvesvaraya Technological University (2013) and a BCA from Bangalore University (2010).',
+ certifications: 'His portfolio lists training and certifications in AI/MCP, project management, Datto RMM administration, Agile practices and Azure-related topics. For formal verification of individual credentials, please contact Surya.',
+ contact: 'You can reach Surya at suryark@live.com. Portfolio: https://suryark88.github.io/ . LinkedIn: https://www.linkedin.com/in/suryanagarajan/ . GitHub: https://github.com/suryark88 .',
+ leaving: 'Surya’s personal reason for considering a change has not been confirmed for this assistant. His portfolio shows an interest in automation, AI integration, service delivery and digital transformation, but I would not want to invent his reason for leaving Kaseya. You can ask Surya directly about his motivation for a particular opportunity.',
+ notice: 'Surya’s notice period and earliest joining date are not confirmed in his public portfolio. Please contact him for current availability.',
+ salary: 'Surya’s expected compensation is not specified in the public portfolio. He can discuss expectations based on the role, location and responsibilities.',
+ weakness: 'A fair assessment depends on the role. His documented strengths are service delivery, workflow automation and Power Platform solutions. For specialist development positions, depth in advanced custom coding or framework-specific skills should be verified rather than assumed.',
+ coding: 'Surya has hands-on experience building Power Apps and automation workflows, plus a Go-based escalation project listed in his portfolio. His public material does not establish expert-level proficiency in every programming language or advanced custom development framework.',
+ unknown: 'I don’t have verified information to answer that precisely. You can ask me about Surya’s career, projects, skills, leadership, or job suitability, or contact him for details not published in his portfolio.'
+};
+const roles = [
+ {name:'Power Platform Developer',keys:['power platform','power apps developer','power app developer','power automate developer','powerapps developer','power platform engineer'],strength:'His Power Apps Audit Tracker and Power Automate workflows demonstrate relevant hands-on work with SharePoint, Dataverse and enterprise integrations.',gap:'Confirm the required level of advanced Power Fx, solution ALM, security, and custom connectors.'},
+ {name:'SharePoint Developer',keys:['sharepoint developer','sharepoint dev','spfx','share point developer','sharepoint engineer'],strength:'He has practical SharePoint-integrated workflow experience using Power Apps and Power Automate.',gap:'His public portfolio does not establish specialist SPFx or advanced SharePoint custom-development experience.'},
+ {name:'Service Delivery Manager',keys:['service delivery manager','service delivery','sdm','customer success manager','customer success','client success'],strength:'His documented experience in service governance, escalations, customer reviews, SLA/KPI management and operational leadership aligns strongly with this kind of role.',gap:'The specific account scope, industry and commercial targets should be checked against the job description.'},
+ {name:'Automation Engineer',keys:['automation engineer','automation developer','automation specialist','workflow developer','rpa developer','uipath','knime'],strength:'He has delivered workflow and reporting automation using Power Automate, Office Scripts and Microsoft Power Platform.',gap:'Specialist UiPath, KNIME or advanced software-engineering depth should be assessed against the role requirements.'},
+ {name:'AI Automation / Copilot Developer',keys:['ai engineer','ai developer','ai automation','copilot developer','copilot studio','ai agent','agent developer','ai integration'],strength:'His projects demonstrate AI-assisted workflow design, Copilot Studio and service-intelligence automation concepts.',gap:'Production-scale model engineering, advanced ML and deployment experience are not established by the portfolio.'},
+ {name:'ServiceNow Developer',keys:['servicenow developer','service now developer','servicenow dev','snow developer'],strength:'He understands ServiceNow incident/service-request processes and ITSM governance.',gap:'The portfolio does not establish deep ServiceNow scripting, application development or platform architecture experience.'},
+ {name:'IT Operations / NOC Manager',keys:['noc manager','it operations manager','operations manager','noc lead','it service manager'],strength:'His background covers IT operations, customer escalations, service quality and patch governance.',gap:'Check the exact infrastructure stack, shift requirements and team-size expectations.'},
+ {name:'Project Manager',keys:['project manager','program manager','delivery lead','technical project manager'],strength:'His service governance, stakeholder coordination and automation delivery are relevant transferable skills.',gap:'Specific project budget ownership and formal program-management scope should be verified.'}
 ];
-const chatMessages=document.getElementById('chatMessages');
-const chatForm=document.getElementById('chatForm');
-const userInput=document.getElementById('userInput');
-function normalize(t){return String(t).toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+const topics = [
+ ['joining', ['when did','when he join','when surya join','when joined','started with','start with','joined kaseya','joining date','since when','which year','when was he hired']],
+ ['leaving', ['why leaving','why leave','why he leave','why quit','reason for leaving','change job','switch job','why resign','why move','looking for change','leave kaseya']],
+ ['fit', ['good fit','best fit','good for','suitable','suitability','fit for','fit this','fit our','can he do','can he handle','should we hire','why hire','why we hire','hire him','match for','match this','right candidate','right person']],
+ ['salary', ['salary','ctc','compensation','pay expectation','expected package','expected salary']],
+ ['notice', ['notice period','join immediate','immediate joining','when can join','available to join','availability','last working day']],
+ ['skills', ['technology','technologies','tech stack','technical skill','skills','expertise','tools','what he know','what does he know','good at','proficient']],
+ ['experience', ['how many years','how many year','years experience','total experience','work experience','work history','previous companies','where worked','past company','career history']],
+ ['projects', ['projects','project work','what built','what has he built','portfolio projects']],
+ ['leadership', ['leadership','manage team','managed team','team size','people management','team handling']],
+ ['education', ['education','qualification','degree','college','university','mca','bca']],
+ ['certifications', ['certification','certificate','training']],
+ ['contact', ['contact','email','linkedin','github','resume','reach him','reach surya']],
+ ['weakness', ['weakness','limitations','skill gap','areas to improve','not good at']],
+ ['coding', ['coding','programming','write code','developer skills','code skills']],
+ ['intro', ['who is surya','who surya','tell me about surya','introduce surya','about him','his profile','who is he']]
+];
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function dist(a,b){if(Math.abs(a.length-b.length)>2)return 3;let p=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let n=[i];for(let j=1;j<=b.length;j++)n[j]=Math.min(n[j-1]+1,p[j]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=n;}return p[b.length]}
+function nearWord(a,b){return a===b||(a.length>=5&&b.length>=5&&dist(a,b)<=1)||(a.length>=8&&b.length>=8&&dist(a,b)<=2)}
+function hasPhrase(text,phrase){const a=norm(text).split(' '),b=norm(phrase).split(' ');if(!b.length)return false;for(let i=0;i<=a.length-b.length;i++){if(b.every((w,j)=>nearWord(a[i+j],w)))return true}return false}
+function any(text,phrases){return phrases.some(p=>hasPhrase(text,p))}
+function identifyRole(text){for(const r of roles){if(any(text,r.keys))return r}return null}
+function fitAnswer(role){return 'For a '+role.name+' position, Surya has relevant experience, but fit depends on the actual job requirements. '+role.strength+' '+role.gap+' If you share the key responsibilities or job description, I can help assess the match more specifically.'}
 function getAnswer(question){
- const text=normalize(question);
- if(!text)return 'Please enter a question.';
- if(/^(hi|hello|hey|good morning|good evening|thanks|thank you)$/.test(text))return 'Hello! You can ask about Surya’s career, technical skills, projects, education and professional contact information.';
- const words=text.split(' ');let best=null,highest=0;
- for(const item of knowledge){let score=0;
-  for(const phrase of item.terms){const term=normalize(phrase);if(!term)continue;
-   if(text===term)score=Math.max(score,100+term.length);
-   else if(text.includes(term))score=Math.max(score,20+term.split(' ').length*6);
-   else {const keys=term.split(' ').filter(w=>w.length>3);if(keys.length){const hits=keys.filter(w=>words.includes(w)).length;score=Math.max(score,(hits/keys.length)*6)}}
-  }
-  if(score>highest){highest=score;best=item}
- }
- return highest>=3&&best?best.answer:'I don’t have verified information about that in Surya’s public portfolio. You can ask about his professional experience, skills, projects, education or contact details.';
+ const q=norm(question);if(!q)return 'Please enter a question.';
+ if(/^(hi|hello|hey|good morning|good evening|namaste|thanks|thank you|ok|okay)$/.test(q))return 'Hello! I can help you learn about Surya’s experience, skills and projects, or assess his fit for a position. What would you like to know?';
+ const role=identifyRole(q);
+ if(state.awaitingRole){if(role){state.role=role.name;state.awaitingRole=false;state.lastTopic='fit';return fitAnswer(role)}if(any(q,['dont know','not sure','any role']))return 'No problem. Surya’s strongest documented areas are service delivery, Power Platform and workflow automation. If you tell me the job title or main responsibilities, I can give a more useful assessment.';if(q.split(' ').length<=7){state.awaitingRole=false;return 'I could not confidently identify the role. Is it a Power Platform Developer, SharePoint Developer, Service Delivery Manager, Automation Engineer, or another position?'} }
+ if(any(q,topics[1][1])){state.lastTopic='leaving';return answers.leaving}
+ if(any(q,topics[0][1])&&any(q,['kaseya','company','job','work','he','surya'])){state.lastTopic='joining';return 'Surya joined Kaseya in June 2024. His role focuses on service delivery, customer success and operational improvement initiatives.'}
+ if(any(q,topics[2][1])||(/^(is|will|would|can) (he|surya) (a )?(good|best|right|suitable)/.test(q))){state.lastTopic='fit';if(role){state.role=role.name;return fitAnswer(role)}if(state.role){const r=roles.find(x=>x.name===state.role);if(r)return fitAnswer(r)}state.awaitingRole=true;return 'I can help assess Surya’s suitability. Which position are you recruiting for? For example: Power Platform Developer, SharePoint Developer, Service Delivery Manager or Automation Engineer.'}
+ if(role&&(/^(power platform|sharepoint|service delivery|automation|ai engineer|servicenow|noc manager|project manager)/.test(q)||q.split(' ').length<=4)&&state.lastTopic==='fit'){state.role=role.name;return fitAnswer(role)}
+ if(any(q,['audit tracker','power apps audit','audit project','monthly audit','sfdc sharepoint','salesforce sharepoint','dataverse integration'])){state.lastTopic='audit';return answers.audit}
+ if(any(q,['sdis','intelligence agent','rca'])){state.lastTopic='sdis';return answers.sdis}
+ if(any(q,['post patch','patch report','patching','datto rmm'])){state.lastTopic='patch';return answers.patch}
+ if(any(q,['catalyst'])){state.lastTopic='catalyst';return answers.catalyst}
+ if(any(q,['cadence'])){state.lastTopic='cadence';return answers.cadence}
+ if(any(q,['servicenow','service now','cmdb'])){state.lastTopic='servicenow';return answers.servicenow}
+ for(const [key,phrases] of topics.slice(3)){if(any(q,phrases)){state.lastTopic=key;return answers[key]}}
+ if(any(q,['when did surya join kaseya','when he started kaseya','kaseya joining']))return answers.kaseya;
+ if(any(q,['kaseya','current company','current job','where work'])){state.lastTopic='kaseya';return answers.kaseya}
+ if(any(q,['power apps','power automate','sharepoint','dataverse','outlook','salesforce'])){state.lastTopic='skills';return answers.skills}
+ if(any(q,['ai','copilot','llm','agent'])){state.lastTopic='skills';return answers.skills}
+ if(any(q,['tell more','more detail','explain more','elaborate','example','what did he do'])){if(state.lastTopic&&answers[state.lastTopic])return answers[state.lastTopic];return 'Certainly. Which part of Surya’s experience would you like me to explain?'}
+ if(role){state.role=role.name;return 'Are you evaluating Surya for a '+role.name+' role? If so, I can compare his documented experience with the requirements.'}
+ return answers.unknown;
 }
-function addMessage(content,kind){
- const div=document.createElement('div');div.className='message '+kind;
- // Only trusted, fixed URLs in knowledge responses become clickable links.
- const urlRegex=/https:\/\/[^\s]+/g;let previous=0;const value=String(content);
- for(const match of value.matchAll(urlRegex)){
-  const start=match.index;div.appendChild(document.createTextNode(value.slice(previous,start)));
-  const url=match[0].replace(/[.,]+$/,'');const link=document.createElement('a');link.href=url;link.textContent=url;link.target='_blank';link.rel='noopener noreferrer';div.appendChild(link);
-  const removed=match[0].slice(url.length);if(removed)div.appendChild(document.createTextNode(removed));previous=start+match[0].length;
- }
- div.appendChild(document.createTextNode(value.slice(previous)));chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight;
-}
-chatForm.addEventListener('submit',function(event){event.preventDefault();const question=userInput.value.trim();if(!question)return;addMessage(question,'user');userInput.value='';try{addMessage(getAnswer(question),'bot')}catch(error){console.error('Assistant response error:',error);addMessage('I could not process that question. Please try asking about Surya’s experience or projects.','bot')}userInput.focus()});
+const chatMessages=document.getElementById('chatMessages'),chatForm=document.getElementById('chatForm'),userInput=document.getElementById('userInput'),sendButton=document.getElementById('sendButton');
+function addMessage(content,kind){const div=document.createElement('div');div.className='message '+kind;const value=String(content),regex=/https:\/\/[^\s]+/g;let previous=0;for(const match of value.matchAll(regex)){div.appendChild(document.createTextNode(value.slice(previous,match.index)));const url=match[0].replace(/[.,]+$/,'');const a=document.createElement('a');a.href=url;a.textContent=url;a.target='_blank';a.rel='noopener noreferrer';div.appendChild(a);previous=match.index+match[0].length;if(match[0].length>url.length)div.appendChild(document.createTextNode(match[0].slice(url.length)))}div.appendChild(document.createTextNode(value.slice(previous)));chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight}
+chatForm.addEventListener('submit',e=>{e.preventDefault();const q=userInput.value.trim();if(!q)return;addMessage(q,'user');userInput.value='';sendButton.disabled=true;try{addMessage(getAnswer(q),'bot')}catch(err){console.error('Assistant error:',err);addMessage('I could not process that question. Could you rephrase it?','bot')}finally{sendButton.disabled=false;userInput.focus()}});
 </script>
 </body>
 </html>
