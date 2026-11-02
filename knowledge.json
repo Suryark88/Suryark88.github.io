@@ -1,0 +1,16 @@
+{
+  "name": "Surya Ram Kumar",
+  "headline": "Service Delivery and Customer Success professional focused on automation and AI-assisted workflows",
+  "summary": "Surya works across service delivery, customer success, operational reporting and process automation. He builds practical solutions using Microsoft Power Platform and related tools.",
+  "skills": ["Service Delivery Management", "Customer Success", "Microsoft Power Apps", "Power Automate", "Copilot Studio", "SharePoint", "Dataverse", "Power BI", "Salesforce", "ServiceNow", "Autotask", "Datto RMM", "Workflow Automation", "Operational Reporting"],
+  "projects": [
+    {"name": "Service Delivery Audit Tracker", "description": "A Power Apps-based workflow that brings account information, service audits and history into a single interface."},
+    {"name": "Service Delivery Intelligence System (SDIS)", "description": "A Copilot-oriented service delivery intelligence concept combining account context, email signals and workflow automation."},
+    {"name": "Escalation Dashboard", "description": "A Dataverse and Power Apps solution for tracking escalations, trends, categories and service status."},
+    {"name": "Post-Patch Reporting Automation", "description": "An automation initiative for assembling operational patching reports and customer communications."}
+  ],
+  "experience": "Service Delivery and Customer Success Management in managed IT services, including account reviews, escalations, stakeholder coordination, service operations and automation initiatives.",
+  "contact": {"email": "suryark@live.com", "linkedin": "https://www.linkedin.com/in/suryanagarajan/", "portfolio": "https://suryark88.github.io/", "github": "https://github.com/suryark88", "huggingface": "https://huggingface.co/suryakumar-ai"},
+  "availability": "For current availability or opportunities, please contact Surya directly.",
+  "suggestedQuestions": ["Who is Surya?", "What are Surya's technical skills?", "Tell me about his automation projects", "Does Surya have customer success experience?", "How can I contact Surya?"]
+}
